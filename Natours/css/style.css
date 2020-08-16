@@ -1,0 +1,95 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    /* prevent padding and border from being added */
+    box-sizing: border-box;
+}
+
+body {
+    /* good practice to add font in body */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    /* 1.7 times larger than predefined line height */
+    line-height: 1.7;
+    color: #777;
+    /* 30px padding to entire body */
+    padding: 30px;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        #7ed56fd2, 
+        #28b485d0), 
+    url('../img/hero.jpg');
+    /* cover...adapt to the viewport */
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 100%);
+
+}
+
+.logo-box{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    /* width will be auto-calculated */
+    height: 35px;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
+
+/* keyword + custom name */
+@keyframes moveInLeft {
+    0% {    /* Start */
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {    /* Start */
+        opacity: 0;
+    }
+    100% {  /* Finish */
+        opacity: 1;
+        transform: translate(0);
+    }
+}
