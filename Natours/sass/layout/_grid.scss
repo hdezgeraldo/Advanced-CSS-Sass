@@ -1,0 +1,50 @@
+.row {
+	// set the max-widths
+	max-width: $grid-width;
+	// center block elements
+	margin: 0 auto;
+
+	// select everything EXCEPT the last child
+	&:not(:last-child){
+		margin-bottom: $gutter-vertical;
+	}
+
+	@include clearfix;
+
+	// attribute selector
+	// select ALL attributes that start with...
+	[class^="col-"] {
+		// float columns to the left side
+		float: left;
+
+		&:not(:last-child){
+			margin-right: $gutter-horizontal;
+		}
+	}
+
+	.col-1-of-2 {
+		// calculate width length for single column
+		width: calc((100% - #{$gutter-horizontal}) / 2);
+	}
+
+	.col-1-of-3 {
+		width: calc((100% - (2 * #{$gutter-horizontal})) / 3);
+	}
+
+	.col-2-of-3 {
+		// 2 times size of a single column + the single gutter width
+		width: calc(2 * ((100% - (2 * #{$gutter-horizontal})) / 3) + #{$gutter-horizontal});
+	}
+
+	.col-1-of-4 {
+		width: calc((100% - (3 * #{$gutter-horizontal})) / 4);
+	}
+	
+	.col-2-of-4 {
+		width: calc(2 * ((100% - (3 * #{$gutter-horizontal})) / 4) + #{$gutter-horizontal});
+	}
+
+	.col-3-of-4 {
+		width: calc(3 * ((100% - (3 * #{$gutter-horizontal})) / 4) + (2 * #{$gutter-horizontal}));
+	}
+}

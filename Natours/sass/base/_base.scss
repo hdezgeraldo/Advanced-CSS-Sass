@@ -1,0 +1,20 @@
+// partial SASS file that holds basic body definitions
+// select all elements, including pseudo-elements 
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	// force inheritance
+	box-sizing: inherit;
+}
+
+html {
+	// defines what 1rem is
+	font-size: 10px;
+}
+
+body {
+	// prevent padding and border from being added
+	box-sizing: border-box;
+}

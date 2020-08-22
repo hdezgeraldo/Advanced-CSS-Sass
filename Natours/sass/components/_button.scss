@@ -1,0 +1,90 @@
+// component that's re-usable across the page
+.btn {
+	&:link,
+	&:visited {
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		display: inline-block;
+		border-radius: 10rem;
+		transition: all .2s;
+		position: relative;
+		font-size: $default-font-size;
+	}
+
+	&:hover {
+		transform: translateY(-3px);
+		// very subtle shadow on the button
+		box-shadow: 0 1rem 2rem rgba($color-black, .2);
+
+		&::after {
+			transform: scaleX(1.4) scaleY(1.6);
+			opacity: 0;
+		}
+	}
+	
+	&:active {
+		transform: translateY(-1px);
+		// make shadow smaller upon click
+		box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+	}
+	
+	&--white {
+		background-color: $color-white;
+		color: $color-grey-dark;
+
+		&::after {
+			background-color: $color-white;
+		}
+	}
+	
+	// add another button, and place it behind the original
+	&::after {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		border-radius: 10rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		// defines position of elements if they're on top of eachother
+		z-index: -1;
+		// this is the initial state //
+		transition: all .4s;
+	}
+	
+	&--animated {
+		animation: moveInButton ease-out .75s;
+		// animation-name: moveInButton;
+		// animation-duration: 1s;
+		// animation-timing-function: ease-out;
+	}
+}
+
+.btn-text {
+	&:link,
+	&:visited {
+		font-size: $default-font-size;
+		color: $color-primary;
+		display: inline-block;
+		text-decoration: none;
+		border-bottom: 1px solid $color-primary;
+		padding: 3px;
+		transition: all .2s;
+	}
+
+	&:hover {
+		background-color: $color-primary;
+		color: $color-white;
+		/* offset-x | offset-y | blur-radius | color */
+		box-shadow: 0 1rem 2rem rgba($color-black, .15);
+		transform: translateY(-2px);
+	}
+
+	&:active {
+		box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+		/* using function values */
+		transform: translateY(0);
+	}
+}
