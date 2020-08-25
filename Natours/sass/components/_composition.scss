@@ -1,26 +1,41 @@
 .composition {
-    position: relative;
+	position: relative;
 
-    &__photo {
-        // use percentages for images for responsiveness
-        width: 55%;
-        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
-        border-radius: 2px;
+	&__photo {
+		// use percentages for images for responsiveness
+		width: 55%;
+		box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+		border-radius: 2px;
+		z-index: 10;
+		transition: all .2s;
+		// add space between border and element
+		outline-offset: 2rem;
 
-        // photo positioning using absolute
-        position: absolute;     // set parent to "relative"
+		// photo positioning using absolute
+		position: absolute;     // set parent to "relative"
 
-        &--p1 {
-            left: 0;
-            top: -2rem;
-        }
-        &--p2 {
-            right: 0;
-            top: 2rem;
-        }
-        &--p3 {
-            left: 20%;
-            top: 10rem;
-        }
-    }
+		&--p1 {
+			left: 0;
+			top: -2rem;
+		}
+		&--p2 {
+			right: 0;
+			top: 2rem;
+		}
+		&--p3 {
+			left: 20%;
+			top: 10rem;
+		}
+		&:hover {
+			outline: 1.5rem solid $color-primary;
+			transform: scale(1.05) translateY(-.5rem);
+			box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+			// higher z-index will remain on top
+			z-index: 20;
+		}
+
+	}
+	&:hover &__photo:not(:hover){
+		transform: scale(.9);
+	}
 }
