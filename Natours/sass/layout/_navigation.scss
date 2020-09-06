@@ -58,7 +58,9 @@
         // normal-state
         &:link,
         &:visited {
+            // apply proper padding
             display: inline-block;
+            
             font-size: 3rem;
             font-weight: 300;
             padding: 1rem 2rem;
